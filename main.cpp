@@ -4,10 +4,10 @@ int main()
 {
     Init();
     SettingsGame();
-    while()
+    do
     {
         SetFrame();
         ShowFrame();
-    }
+    } while (GetKeyState(VK_ESCAPE) >= 0);
     return 0;
 }
