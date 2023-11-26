@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.26)
+
+project(BrickGames)
+
+add_executable(BrickGames main.cpp)
+
+target_include_directories(BrickGames PUBLIC ${PROJECT_SOURCE_DIR})
