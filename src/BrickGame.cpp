@@ -1,9 +1,11 @@
 #include "include/BrickGame.hpp"
+#include "include/GlobalDefinition.hpp"
 
 // Инициалиация внутренних данных при запуске игры
 void Init()
 {
-    system("mode con cols=38 lines=26");  // установка размеров консольного окна
+	std::string mode_con = "mode con cols";
+	system("mode con cols=38 lines=26");  // установка размеров консольного окна
 	SetInvisibleCursor();
     return;
 }

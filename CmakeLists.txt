@@ -11,6 +11,7 @@ src/Frame.cpp
 set(HEADERS
 include/BrickGame.hpp
 include/Frame.hpp
+include/GlobalDefinition.hpp
 )
 
 add_executable(BrickGames ${SOURCES} ${HEADERS})
