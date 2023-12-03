@@ -24,4 +24,7 @@ void ShowFrame(void);
 // Перемещение курсора
 void MovCursor(int position_x, int position_y);
 // Переключение курсора в невидимый режим
-void SetInvisibleCursor();
+void SetInvisibleCursor(void);
+
+// Установка рамеров консольного окна
+void SetSizeConsole(int console_width, int console_height);

@@ -8,7 +8,7 @@ Frame::Frame(T_FRAME t_frame)
     // верхняя строка
     for (int column = 1; column <= width_map; column++)
     {
-        this->line[0] = this->line[0] + "#";
+        this->line[0] = this->line[0] + "_";
     }
 
     // строки 2 ... HEIGHT_FRAME - 1
@@ -17,7 +17,7 @@ Frame::Frame(T_FRAME t_frame)
         for (int column = 1; column <= width_map; column++)
         {
             if (column == 1 || column == width_map)
-                this->line[str - 1] += "#";
+                this->line[str - 1] += "|";
             else
                 this->line[str - 1] += " ";
         }
@@ -26,7 +26,7 @@ Frame::Frame(T_FRAME t_frame)
     // нижняя строка
     for (int column = 1; column <= width_map; column++)
     {
-        this->line[height_map - 1] = this->line[height_map - 1] + "#";
+        this->line[height_map - 1] = this->line[height_map - 1] + "_";
     }
 
 

@@ -4,32 +4,30 @@
 // Инициалиация внутренних данных при запуске игры
 void Init()
 {
-	std::string mode_con = "mode con cols";
-	system("mode con cols=38 lines=26");  // установка размеров консольного окна
-	SetInvisibleCursor();
-    return;
+	SetSizeConsole(WIDTH_FRAME+1, HEIGHT_FRAME);  // установка размеров консольного окна
+	SetInvisibleCursor();						  // скрытие курсора
 }
 
 // Настройка режима игры
 void SettingsGame()
 {
-    return;
+   /*----------*/
 }
 
 // Формирование кадра
 void SetFrame()
 {
-    return;
+    /*----------------*/
 }
 
 // Отображение кадра на экране
 void ShowFrame()
 {
-    MovCursor(0,0);
-    return;
+    MovCursor(0,0);		// Возврат курсора в левый верхний угол каждые 40мс
+
 }
 
-// Перемещение курсора
+// Перемещение курсора в левый верхний угол
 void MovCursor(int position_x, int position_y)
 {
 	COORD coord;
@@ -43,7 +41,18 @@ void MovCursor(int position_x, int position_y)
 void SetInvisibleCursor()
 {
 	CONSOLE_CURSOR_INFO lpCursor;
-	lpCursor.bVisible = 0;
+	lpCursor.bVisible = false;
 	lpCursor.dwSize = 1;
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &lpCursor);
+}
+
+void SetSizeConsole(int console_width, int console_height)
+{
+	// "mode con cols=WIDTH lines=HEIGHT"
+	std::string mode_con = "mode con cols=";
+	mode_con += std::to_string(console_width);
+	mode_con += " lines=";
+	mode_con += std::to_string(console_height);
+
+	system(mode_con.c_str());  // установка размеров консольного окна
 }
