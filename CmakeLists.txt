@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.25)
 
 project(BrickGames)
 
@@ -6,14 +6,16 @@ set(SOURCES
 main.cpp
 src/BrickGame.cpp
 src/Frame.cpp
-)
+src/PropertysGame.cpp
+src/Map.cpp)
 
 set(HEADERS
 include/BrickGame.hpp
 include/Frame.hpp
 include/GlobalDefinition.hpp
-)
+include/PropertysGame.hpp
+include/Map.hpp)
 
-add_executable(BrickGames ${SOURCES} ${HEADERS})
+add_executable(BrickGames ${SOURCES} ${HEADERS} "src/Map.cpp")
 
 target_include_directories(BrickGames PUBLIC ${PROJECT_SOURCE_DIR})

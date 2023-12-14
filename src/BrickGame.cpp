@@ -4,7 +4,7 @@
 // Инициалиация внутренних данных при запуске игры
 void Init()
 {
-	SetSizeConsole(WIDTH_FRAME+1, HEIGHT_FRAME);  // установка размеров консольного окна
+	SetSizeConsole(WIDTH_FRAME+4, HEIGHT_FRAME+2);  // установка размеров консольного окна
 	SetInvisibleCursor();						  // скрытие курсора
 }
 
@@ -24,7 +24,6 @@ void SetFrame()
 void ShowFrame()
 {
     MovCursor(0,0);		// Возврат курсора в левый верхний угол каждые 40мс
-
 }
 
 // Перемещение курсора в левый верхний угол
@@ -34,7 +33,7 @@ void MovCursor(int position_x, int position_y)
 	coord.X = position_x;
 	coord.Y = position_y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-	Sleep(40);
+	Sleep(T_SEC/FREQ);
 }
 
 // Переключение курсора в невидимый режим

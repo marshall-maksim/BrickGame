@@ -6,6 +6,8 @@
 
 // classes
 #include "include/Frame.hpp"
+#include "include/PropertysGame.hpp"
+#include "include/Map.hpp"
 
 
 
