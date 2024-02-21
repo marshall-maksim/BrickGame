@@ -59,7 +59,6 @@ bool PropertysGame::isPause()
 
 void PropertysGame::setFramePropertys()
 {
-	static int loc_takt_cnt = 0;
 	for (int i = 0; i < HEIGHT_PROPERTYS; i++)
 	{
 		switch (i)
@@ -94,7 +93,7 @@ void PropertysGame::setFramePropertys()
 
 				// ПАУЗА в последней строке
 			case HEIGHT_PROPERTYS - 1:
-				if (pause_ && (loc_takt_cnt%FREQ > FREQ/2))		// отображение "PAUSE" в проблеске
+				if (pause_ && (taktCnt %FREQ > FREQ/2))		// отображение "PAUSE" в проблеске
 				{
 					this->propertys_line[i] = "PAUSE";
 				}
@@ -107,7 +106,6 @@ void PropertysGame::setFramePropertys()
 				this->propertys_line[i] = "     ";
 		}	// end switch
 	}	// end for
-	loc_takt_cnt++;
 };
 
 void PropertysGame::update() {

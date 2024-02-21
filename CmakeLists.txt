@@ -4,18 +4,23 @@ project(BrickGames)
 
 set(SOURCES
 main.cpp
+src/GlobalDefinition.cpp
 src/BrickGame.cpp
 src/Frame.cpp
 src/PropertysGame.cpp
-src/Map.cpp)
+src/Game.cpp
+src/games/Tetris.cpp
+)
 
 set(HEADERS
+include/GlobalDefinition.hpp
 include/BrickGame.hpp
 include/Frame.hpp
-include/GlobalDefinition.hpp
 include/PropertysGame.hpp
-include/Map.hpp)
+include/Game.hpp
+include/games/Tetris.hpp
+)
 
-add_executable(BrickGames ${SOURCES} ${HEADERS} "src/Map.cpp")
+add_executable(BrickGames ${SOURCES} ${HEADERS})
 
 target_include_directories(BrickGames PUBLIC ${PROJECT_SOURCE_DIR})

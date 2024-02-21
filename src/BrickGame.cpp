@@ -4,26 +4,45 @@
 // Инициалиация внутренних данных при запуске игры
 void Init()
 {
-	SetSizeConsole(WIDTH_FRAME+4, HEIGHT_FRAME+2);  // установка размеров консольного окна
-	SetInvisibleCursor();						  // скрытие курсора
+	SetSizeConsole(WIDTH_FRAME+2, HEIGHT_FRAME+2);  // установка размеров консольного окна
+	SetInvisibleCursor();							// скрытие курсора
 }
 
-// Настройка режима игры
-void SettingsGame()
+
+
+// Обработка клавиш
+void KeyProcessing()
 {
-   /*----------*/
+	if (GetKeyState(VK_RIGHT) < 0)  { stateKeyRight = PRESS; }
+	else						{ stateKeyRight = RELEASE; }
+
+	if (GetKeyState(VK_LEFT) < 0)   { stateKeyLeft = PRESS; }
+	else						{ stateKeyLeft = RELEASE; }
+
+	if (GetKeyState(VK_DOWN) < 0)   { stateKeyDown = PRESS; }
+	else						{ stateKeyDown = RELEASE; }
+
+	if (GetKeyState(VK_UP) < 0)		{ stateKeyUp = PRESS; }
+	else						{ stateKeyUp = RELEASE; }
+
+	if (GetKeyState(VK_SHIFT) < 0)  { stateKeyRotate = PRESS; }
+	else						{ stateKeyRotate = RELEASE; }
+
+	if (GetKeyState(VK_SPACE) < 0)  { stateKeyPause = PRESS; }
+	else						{ stateKeyPause = RELEASE; }
+
+	if (GetKeyState(VK_ESCAPE) < 0)  
+	{ stateKeyOnOff = PRESS; }
+	else						
+	{ stateKeyOnOff = RELEASE; }
 }
 
-// Формирование кадра
-void SetFrame()
-{
-    /*----------------*/
-}
 
 // Отображение кадра на экране
-void ShowFrame()
+void ReturnCursor()
 {
     MovCursor(0,0);		// Возврат курсора в левый верхний угол каждые 40мс
+	return;
 }
 
 // Перемещение курсора в левый верхний угол

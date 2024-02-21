@@ -7,22 +7,22 @@
 // classes
 #include "include/Frame.hpp"
 #include "include/PropertysGame.hpp"
-#include "include/Map.hpp"
+#include "include/games/Tetris.hpp"
+
 
 
 
 ////////////////////////
-// function rototypes //
+// function prototypes //
 ////////////////////////
 
 // Инициалиация внутренних данных при запуске игры
 void Init(void);
-// Настройка режима игры
-void SettingsGame(void);
-// Формирование кадра
-void SetFrame(void);
+// Обработка клавиш
+void KeyProcessing(void);
+
 // Отображение кадра на экране
-void ShowFrame(void);
+void ReturnCursor(void);
 // Перемещение курсора
 void MovCursor(int position_x, int position_y);
 // Переключение курсора в невидимый режим

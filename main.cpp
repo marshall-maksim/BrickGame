@@ -1,21 +1,28 @@
 #include "include/BrickGame.hpp"
 
 
+
+static Frame frame;
+
+
 int main()
 {
     Init();
-    SettingsGame();
-    Frame frame(GAME);
-    Map map;
-    PropertysGame propertys;
+  //  SettingsGame();
+   // Tetris tetris = Tetris(frame);
+
     do
     {
-        propertys.update();
-        frame.getMap(map);
-        frame.getPropertys(propertys);
-        frame.showFrame();
-        SetFrame();
-        ShowFrame();
-    } while (GetKeyState(VK_ESCAPE) >= 0);
+
+        KeyProcessing();
+        frame.propertys.update();           // обновлени содержимого поля "Свойства"
+        frame.getMapToFrame();              // копирование содержимого игровой карты в окно игры
+        frame.getPropertysToFrame();        // копирование содержимого поля "Свойства" в окно игры
+        frame.showFrame();                  // отрисовка окна в консоли
+ 
+        ReturnCursor();
+        ++taktCnt;
+    } while (stateKeyOnOff != PRESS);
+        //(GetKeyState(VK_ESCAPE) >= 0);
     return 0;
 }
